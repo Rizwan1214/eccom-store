@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .custom-call-to-action {
+        padding: 40px;
+        max-width: 890px;
+        margin: auto;
+        background: rgba(0, 174, 179, 0.1);
+        border-radius: 16px;
+        .call-to-action-content {
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+          h2 {
+            font-size: 38px;
+            font-weight: 500;
+            line-height: 44px;
+            margin-bottom: 0;
+          }
+          p {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 24px;
+            margin-bottom: 0;
+          }
+          button {
+            padding: 13px 32px;
+            border-radius: 100px;
+            background: #febf3e;
+            border: none;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 18px;
+            letter-spacing: 1.28px;
+            text-transform: uppercase;
+          }
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        .custom-call-to-action {
+          padding: 24px;
+          .call-to-action-content {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            h2 {
+              font-size: 28px;
+              line-height: 30px;
+            }
+            button {
+              padding: 7px 24px;
+              font-size: 14px;
+              letter-spacing: 1.12px;
+              width: 100%;
+            }
+          }
+        }
+      }
+    </style>
+    <style>
+      .honor-block {
+        display: flex;
+        gap: 24px;
+        padding: 40px;
+        border: 1px solid #131212;
+        border-radius: 16px;
+        max-width: 890px;
+        margin: auto;
+        .honor-heading {
+          span {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 22px;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+          }
+          h3 {
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 32px;
+            letter-spacing: 0.28px;
+            margin-bottom: 0;
+          }
+        }
+        .honor-image-content {
+          flex: 1;
+          img {
+            width: 100%;
+            border-radius: 16px;
+          }
+          .honor-heading {
+            display: none;
+          }
+        }
+        .honor-content {
+          flex: 1.2;
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+          h2 {
+            font-size: 38px;
+            font-weight: 500;
+            line-height: 44px;
+            margin-bottom: 0;
+          }
+          .honor-btn-wrapper {
+            display: flex;
+            gap: 16px;
+            button {
+              border-radius: 100px;
+              padding: 13px 15px;
+              flex: 1;
+              font-size: 16px;
+              font-weight: 700;
+              line-height: 18px;
+              letter-spacing: 1.28px;
+              text-transform: uppercase;
+              background: none;
+              &:first-child {
+                background: #febf3e;
+                border: 1px solid #febf3e;
+              }
+            }
+          }
+        }
+      }
+
+      @media screen and (max-width: 991px) {
+        .honor-block {
+          gap: 16px;
+          padding: 16px;
+          flex-direction: column;
+          .honor-image-content {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            img {
+              width: 40%;
+              border-radius: 16px;
+            }
+            .honor-heading {
+              display: block;
+            }
+          }
+          .honor-content {
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            .honor-heading {
+              display: none;
+            }
+            h2 {
+              display: none;
+            }
+            .honor-btn-wrapper {
+              display: flex;
+              gap: 16px;
+            }
+          }
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        .honor-block {
+          .honor-heading {
+            span {
+              font-size: 14px;
+              line-height: 20px;
+              letter-spacing: 1.12px;
+            }
+            h3 {
+              font-size: 21px;
+              line-height: 25px;
+            }
+          }
+
+          .honor-btn-wrapper {
+            gap: 16px;
+            flex-direction: column;
+            button {
+              padding: 7px 15px;
+              font-size: 14px;
+              line-height: 18px;
+              letter-spacing: 1.12px;
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+    </style>
+
+    <style>
+      .heading h1 {
+        text-align: center;
+        font-size: 52px;
+        font-weight: 500;
+        line-height: 58px;
+        margin-bottom: 40px;
+      }
+
+      .related-image img {
+        border-radius: 16px;
+        width: 100%;
+      }
+
+      .related-image button {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: normal;
+        border-radius: 64px;
+        padding: 4px 12px;
+        background: #00aeb3;
+        border: 1px solid #00aeb3;
+        position: absolute;
+        bottom: -12px;
+        left: 0;
+      }
+
+      .related-image {
+        position: relative;
+      }
+
+      .related-content {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        margin-bottom: 40px;
+      }
+
+      .time-content {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 24px;
+      }
+
+      .related-detail-content h3 {
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 32px;
+        letter-spacing: 0.28px;
+        margin-bottom: 0;
+      }
+
+      .related-detail-content {
+        display: flex;
+        gap: 16px;
+        flex-direction: column;
+      }
+
+      .post-btn-wrapper button {
+        border-radius: 100px;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 18px;
+        letter-spacing: 1.28px;
+        text-transform: uppercase;
+        background: #febf3e;
+        padding: 13px 32px;
+        border: 1px solid #febf3e;
+      }
+
+      .post-btn-wrapper {
+        text-align: center;
+      }
+
+      .related-block button:hover {
+        opacity: 0.9;
+      }
+
+      @media screen and (max-width: 1024px) {
+        .heading h1 {
+          font-size: 34px;
+          line-height: 40px;
+          margin-bottom: 32px;
+        }
+        .related-content {
+          gap: 8px;
+          margin-bottom: 32px;
+        }
+        .related-image button {
+          position: static;
+          bottom: auto;
+          left: auto;
+          margin-top: 16px;
+        }
+        .related-detail-content {
+          gap: 8px;
+        }
+        .related-detail-content h3 {
+          font-size: 21px;
+          font-weight: 700;
+          line-height: 25px;
+        }
+      }
+
+      /* scss styles */
+
+      .related-block {
+        .heading {
+          h1 {
+            text-align: center;
+            font-size: 52px;
+            font-weight: 500;
+            line-height: 58px;
+            margin-bottom: 40px;
+          }
+        }
+        .related-image {
+          position: relative;
+          img {
+            border-radius: 16px;
+            width: 100%;
+          }
+          button {
+            font-size: 12px;
+            font-weight: 500;
+            line-height: normal;
+            border-radius: 64px;
+            padding: 4px 12px;
+            background: #00aeb3;
+            border: 1px solid #00aeb3;
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+          }
+        }
+        .related-content {
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+          margin-bottom: 40px;
+          .related-detail-content {
+            display: flex;
+            gap: 16px;
+            flex-direction: column;
+            .time-content {
+              font-size: 16px;
+              font-weight: 300;
+              line-height: 24px;
+            }
+            h3 {
+              font-size: 28px;
+              font-weight: 700;
+              line-height: 32px;
+              letter-spacing: 0.28px;
+              margin-bottom: 0;
+            }
+          }
+        }
+        .post-btn-wrapper {
+          text-align: center;
+          button {
+            border-radius: 100px;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 18px;
+            letter-spacing: 1.28px;
+            text-transform: uppercase;
+            background: #febf3e;
+            padding: 13px 32px;
+            border: 1px solid #febf3e;
+          }
+        }
+        button {
+          &:hover {
+            opacity: 0.9;
+          }
+        }
+      }
+      @media screen and (max-width: 1024px) {
+        .related-block {
+          .heading {
+            h1 {
+              font-size: 34px;
+              line-height: 40px;
+              margin-bottom: 32px;
+            }
+          }
+          .related-image {
+            button {
+              position: static;
+              bottom: auto;
+              left: auto;
+              margin-top: 16px;
+            }
+          }
+          .related-content {
+            gap: 8px;
+            margin-bottom: 32px;
+            .related-detail-content {
+              gap: 8px;
+              h3 {
+                font-size: 21px;
+                font-weight: 700;
+                line-height: 25px;
+              }
+            }
+          }
+        }
+      }
+    </style>
+    <style>
+      .featured-post-block {
+        background: #00aeb31a;
+        .container.padding-vert {
+          padding-bottom: 40px;
+        }
+        .featured-post {
+          .blog-image-content {
+            img {
+              border-radius: 16px;
+              width: 100%;
+              transition: all 0.2s ease-in-out;
+              height: 512px;
+              object-fit: cover;
+              &:hover {
+                border-radius: 100%;
+              }
+            }
+          }
+
+          .blog-banner-content {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            p {
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 300;
+              line-height: 24px;
+              margin-bottom: 0;
+            }
+            h1 {
+              font-size: 52px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: 58px;
+              margin-bottom: 0;
+            }
+            a {
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: 24px;
+              color: #131212;
+              padding-bottom: 4px;
+            }
+            .call-action-wrapper {
+              a {
+                position: relative;
+                padding-bottom: 2px;
+                text-decoration: none !important;
+                &:hover {
+                  &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    background: #febf3e;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .single-post-banner {
+        .back-to-latest-wrapper {
+          display: inline-block;
+          margin: 16px 0;
+          a {
+            display: flex;
+            padding: 7px 24px;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            border-radius: 100px;
+            border: 2px solid #131212;
+            color: #131212;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 18px;
+            letter-spacing: 1.12px;
+            text-transform: uppercase;
+            text-decoration: none;
+          }
+        }
+        .row {
+          align-items: center;
+        }
+        .category-btn {
+          a {
+            font-size: 12px !important;
+            font-weight: 500 !important;
+            line-height: normal !important;
+          }
+        }
+        .social-links-wrapper {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          label {
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 18px;
+            letter-spacing: 1.12px;
+            text-transform: uppercase;
+          }
+        }
+      }
+
+      @media screen and (max-width: 1024px) {
+        .featured-post-block {
+          .container.padding-vert {
+            padding-top: 120px;
+          }
+          .featured-post {
+            .blog-banner-content {
+              margin-top: 20px;
+            }
+          }
+        }
+        .single-post-banner {
+          .blog-banner-content {
+            margin-top: 0 !important;
+            margin-bottom: 15px;
+          }
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        .featured-post-block {
+          .container.padding-vert {
+            padding-bottom: 20px;
+          }
+          .featured-post {
+            .blog-image-content {
+              margin: 0 -12px;
+              img {
+                border-radius: 0;
+                height: auto;
+                &:hover {
+                  border-radius: 100%;
+                }
+              }
+            }
+            .blog-banner-content {
+              h1 {
+                font-size: 28px;
+                font-weight: 700;
+                line-height: 32px;
+                letter-spacing: 0.28px;
+                margin-bottom: 0;
+              }
+              button {
+                font-size: 12px;
+                padding: 4px 12px;
+              }
+            }
+          }
+        }
+        .single-post-banner {
+          .social-links-wrapper {
+            flex-wrap: wrap;
+            label {
+              display: block;
+              width: 100%;
+            }
+          }
+        }
+      }
+    </style>
+    <style>
+      .feature-post-list .wp-block-search__input:focus-visible {
+        outline: none;
+      }
+      .feature-post-list .wp-block-search__input {
+        border-radius: 200px;
+        border: 2px solid #00aeb3;
+        background: #fff;
+        padding-left: 16px;
+        font-size: 21px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 25px;
+      }
+
+      .feature-post-list .wp-block-search__inside-wrapper button {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        width: 34px;
+        height: 34px;
+        margin: 0;
+        border-radius: 100%;
+        padding: 0;
+      }
+
+      .feature-post-list .wp-block-search__inside-wrapper {
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="custom-call-to-action">
+      <div class="call-to-action-content">
+        <h2>Custom Call to Action</h2>
+        <p>
+          Gravida enim morbi neque rutrum nunc enim penatibus tempus nulla. Id
+          tristique lorem aenean nunc donec. Maecenas tellus dis metus nec.
+          Velit turpis pretium vitae diam suscipit.
+        </p>
+        <div><button>Call to Action</button></div>
+      </div>
+    </div>
+
+    <div class="honor-block">
+      <div class="honor-image-content">
+        <img
+          src="http://helphopelive.localhost.com/wp-content/uploads/2023/06/Ella-1-500x400.jpg"
+          alt="honor-image"
+        />
+        <div class="honor-heading">
+          <span>In Honor of</span>
+          <h3>Cynthia Fanny Del Valle-Silvero</h3>
+        </div>
+      </div>
+      <div class="honor-content">
+        <div class="honor-heading">
+          <span>In Honor of</span>
+          <h3>Cynthia Fanny Del Valle-Silvero</h3>
+        </div>
+        <h2>Help raise support for a wheelchair transport van for Cynthia!</h2>
+        <div class="honor-btn-wrapper">
+          <button>Give</button>
+          <button>View Campaign</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="related-block">
+      <div class="heading">
+        <h1>Related Posts</h1>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <div class="related-content">
+            <div class="related-image">
+              <img
+                src="http://helphopelive.localhost.com/wp-content/uploads/2023/11/Placeholder-Image-500x400.png"
+                alt="related-image"
+              />
+              <button>Trending News</button>
+            </div>
+            <div class="related-detail-content">
+              <div class="time-content">April 5, 2023</div>
+              <h3>
+                April Is Donate Life Month – and We Are Touched by Transplant
+              </h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="related-content">
+            <div class="related-image">
+              <img
+                src="http://helphopelive.localhost.com/wp-content/uploads/2023/11/Placeholder-Image-500x400.png"
+                alt="related-image"
+              />
+              <button>Trending News</button>
+            </div>
+            <div class="related-detail-content">
+              <div class="time-content">April 5, 2023</div>
+              <h3>
+                April Is Donate Life Month – and We Are Touched by Transplant
+              </h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="related-content">
+            <div class="related-image">
+              <img
+                src="http://helphopelive.localhost.com/wp-content/uploads/2023/11/Placeholder-Image-500x400.png"
+                alt="related-image"
+              />
+              <button>Trending News</button>
+            </div>
+            <div class="related-detail-content">
+              <div class="time-content">April 5, 2023</div>
+              <h3>
+                April Is Donate Life Month – and We Are Touched by Transplant
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="post-btn-wrapper">
+        <button>See More Posts</button>
+      </div>
+    </div>
+
+    <div class="featured-post-block">
+      <div class="container padding-vert">
+        <div class="featured-post">
+          <div class="back-to-latest-wrapper" style="display: inline-block">
+            <a href="#"
+              ><span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                >
+                  <path
+                    id="arrow_back"
+                    d="M6 12L0 6L6 0L7.06875 1.05L2.86875 5.25H12V6.75H2.86875L7.06875 10.95L6 12Z"
+                    fill="#131212"
+                  ></path>
+                </svg> </span
+              ><span>Return to Latest</span></a
+            >
+          </div>
+          <div class="row">
+            <div class="col-xl-6">
+              <div
+                class="blog-banner-content"
+                style="display: flex; flex-direction: column; gap: 24px"
+              >
+                <div>
+                  <p>May 31, 2023</p>
+                  <h1>
+                    ‘Overwhelmed with joy’: Ripon graduate crosses stage using
+                    robotic legs
+                  </h1>
+                </div>
+                <div>
+                  <a
+                    class="badge rounded-pill text-reset bg-primary giveaway-bike"
+                    href="http://helphopelive.localhost.com/category/giveaway-bike/"
+                  >
+                    Adaptive Bike Giveaways
+                  </a>
+                </div>
+
+                <div class="social-links-wrapper">
+                  <label>share</label>
+                  <a href="#">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      viewBox="0 0 40 40"
+                      fill="none"
+                    >
+                      <path
+                        d="M24.1836 21.375H21.5469V29.25H18.0312V21.375H15.1484V18.1406H18.0312V15.6445C18.0312 12.832 19.7188 11.25 22.2852 11.25C23.5156 11.25 24.8164 11.4961 24.8164 11.4961V14.2734H23.375C21.9688 14.2734 21.5469 15.1172 21.5469 16.0312V18.1406H24.6758L24.1836 21.375Z"
+                        fill="#131212"
+                      ></path>
+                      <rect
+                        x="1"
+                        y="1"
+                        width="38"
+                        height="38"
+                        rx="19"
+                        stroke="#131212"
+                        stroke-width="2"
+                      ></rect>
+                    </svg>
+                  </a>
+                  <a href="#">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      viewBox="0 0 40 40"
+                      fill="none"
+                    >
+                      <path
+                        d="M27.1367 16.5938C27.1367 16.7695 27.1367 16.9102 27.1367 17.0859C27.1367 21.9727 23.4453 27.5625 16.6602 27.5625C14.5508 27.5625 12.6172 26.9648 11 25.9102C11.2812 25.9453 11.5625 25.9805 11.8789 25.9805C13.6016 25.9805 15.1836 25.3828 16.4492 24.3984C14.832 24.3633 13.4609 23.3086 13.0039 21.832C13.25 21.8672 13.4609 21.9023 13.707 21.9023C14.0234 21.9023 14.375 21.832 14.6562 21.7617C12.9688 21.4102 11.7031 19.9336 11.7031 18.1406V18.1055C12.1953 18.3867 12.793 18.5273 13.3906 18.5625C12.3711 17.8945 11.7383 16.7695 11.7383 15.5039C11.7383 14.8008 11.9141 14.168 12.2305 13.6406C14.0586 15.8555 16.8008 17.332 19.8594 17.5078C19.7891 17.2266 19.7539 16.9453 19.7539 16.6641C19.7539 14.625 21.4062 12.9727 23.4453 12.9727C24.5 12.9727 25.4492 13.3945 26.1523 14.1328C26.9609 13.957 27.7695 13.6406 28.4727 13.2188C28.1914 14.0977 27.6289 14.8008 26.8555 15.2578C27.5938 15.1875 28.332 14.9766 28.9648 14.6953C28.4727 15.4336 27.8398 16.0664 27.1367 16.5938Z"
+                        fill="#131212"
+                      ></path>
+                      <rect
+                        x="1"
+                        y="1"
+                        width="38"
+                        height="38"
+                        rx="19"
+                        stroke="#131212"
+                        stroke-width="2"
+                      ></rect>
+                    </svg> </a
+                  ><a href="#">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      viewBox="0 0 40 40"
+                      fill="none"
+                    >
+                      <path
+                        d="M15.6406 27H12.3711V16.4883H15.6406V27ZM13.9883 15.082C12.9688 15.082 12.125 14.2031 12.125 13.1484C12.125 11.707 13.6719 10.793 14.9375 11.5312C15.5352 11.8477 15.8867 12.4805 15.8867 13.1484C15.8867 14.2031 15.043 15.082 13.9883 15.082ZM27.8398 27H24.6055V21.9023C24.6055 20.6719 24.5703 19.125 22.8828 19.125C21.1953 19.125 20.9492 20.4258 20.9492 21.7969V27H17.6797V16.4883H20.8086V17.9297H20.8438C21.3008 17.1211 22.3555 16.2422 23.9375 16.2422C27.2422 16.2422 27.875 18.4219 27.875 21.2344V27H27.8398Z"
+                        fill="#131212"
+                      ></path>
+                      <rect
+                        x="1"
+                        y="1"
+                        width="38"
+                        height="38"
+                        rx="19"
+                        stroke="#131212"
+                        stroke-width="2"
+                      ></rect>
+                    </svg> </a
+                  ><a href="#">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      viewBox="0 0 40 40"
+                      fill="none"
+                    >
+                      <path
+                        d="M20 23.625C20.5625 23.625 21.1602 23.4492 21.6523 23.0625L29 17.3672V25.3125C29 26.2617 28.2266 27 27.3125 27H12.6875C11.7383 27 11 26.2617 11 25.3125V17.3672L18.3125 23.0625C18.8047 23.4492 19.4023 23.625 20 23.625ZM11.5625 16.3828C11.2109 16.1016 11 15.6445 11 15.1875C11 14.2734 11.7383 13.5 12.6875 13.5H27.3125C28.2266 13.5 29 14.2734 29 15.1875C29 15.6445 28.7539 16.1016 28.4023 16.3828L20.9492 22.1836C20.3867 22.6055 19.5781 22.6055 19.0156 22.1836L11.5625 16.3828Z"
+                        fill="#131212"
+                      ></path>
+                      <rect
+                        x="1"
+                        y="1"
+                        width="38"
+                        height="38"
+                        rx="19"
+                        stroke="#131212"
+                        stroke-width="2"
+                      ></rect>
+                    </svg> </a
+                  ><a href="#">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      viewBox="0 0 40 40"
+                      fill="none"
+                    >
+                      <path
+                        d="M29.7734 12.7266C30.7227 13.6758 31.2148 14.8711 31.2148 16.1016C31.25 17.4375 30.793 18.7383 29.7734 19.7578L25.0977 24.4336C24.1133 25.418 22.8477 25.875 21.582 25.875C20.3164 25.875 19.0508 25.418 18.0664 24.4336C16.4492 22.8164 16.2031 20.3555 17.2578 18.457C17.5742 18.1758 17.9609 18 18.3828 18C18.8047 18 19.2266 18.1758 19.5078 18.4922C19.6133 18.5977 19.7188 18.7383 19.7891 18.8789L19.6133 18.9844C19.1211 19.5117 18.8398 20.1797 18.8398 20.918C18.8398 21.6562 19.1562 22.3242 19.6484 22.8516C20.1758 23.3438 20.8438 23.625 21.582 23.625C22.3203 23.625 22.9883 23.3438 23.5156 22.8516L28.1914 18.1758C28.6836 17.6484 28.9648 16.9805 28.9648 16.2422C28.9648 15.5039 28.6836 14.8359 28.1914 14.3086C27.6641 13.8164 26.9961 13.5 26.2578 13.5C25.5195 13.5 24.8516 13.8164 24.3242 14.3086L22.9883 15.6445C22.918 15.5391 22.8125 15.3984 22.707 15.293C22.25 14.8711 21.7578 14.5195 21.2305 14.2383L22.7422 12.7266C23.7266 11.7422 24.9922 11.25 26.2578 11.25C27.5234 11.25 28.7891 11.7422 29.7734 12.7266ZM16.9766 24.8906C17.0469 24.9961 17.1523 25.1367 17.2578 25.2422C17.7148 25.6641 18.207 26.0156 18.7344 26.2969L17.2227 27.8086C16.2383 28.793 14.9727 29.25 13.707 29.25C12.4414 29.25 11.1758 28.793 10.1914 27.8086C9.20703 26.8594 8.75 25.5586 8.75 24.293C8.75 23.0273 9.20703 21.7617 10.1914 20.7773L14.8672 16.1016C15.8516 15.1172 17.1172 14.625 18.3828 14.625C19.6484 14.625 20.9141 15.1172 21.8984 16.1016C23.5156 17.7188 23.7617 20.1797 22.707 22.0781C22.3906 22.3594 22.0039 22.5 21.582 22.5C21.1602 22.5 20.7383 22.3594 20.457 22.043C20.3516 21.9375 20.2461 21.7969 20.1758 21.6562L20.3164 21.5508C20.8086 21.0234 21.0898 20.3555 21.0898 19.6172C21.0898 18.8789 20.8086 18.2109 20.3164 17.6836C19.7891 17.1914 19.1562 16.875 18.3828 16.875C17.6445 16.875 16.9766 17.1562 16.4492 17.6836L11.7734 22.3594C11.2812 22.8867 11 23.5547 11 24.293C11 25.0312 11.2812 25.6992 11.7734 26.2266C12.3008 26.7188 12.9688 27 13.707 27C14.4453 27 15.1133 26.7188 15.6406 26.2266L16.9766 24.8906Z"
+                        fill="#131212"
+                      ></path>
+                      <rect
+                        x="1"
+                        y="1"
+                        width="38"
+                        height="38"
+                        rx="19"
+                        stroke="#131212"
+                        stroke-width="2"
+                      ></rect>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-6">
+              <div class="blog-image-content">
+                <img
+                  src="http://helphopelive.localhost.com/wp-content/uploads/2023/06/Ella-1.jpg"
+                  alt="‘Overwhelmed with joy’: Ripon graduate crosses stage using robotic legs"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
